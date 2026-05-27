@@ -13,8 +13,7 @@ function Hero() {
             <span className="eyebrow-dot" />
             Kinkajoo · Tel-Aviv · since 2012
           </div>
-          <h1 className="hero-brand-title">Kinkajoo</h1>
-          <p className="hero-brand-sub">Games &amp; Apps</p>
+
           <div className="hero-ctas">
             <a className="btn-solid lg" href="games.html">Browse games <span className="arr">→</span></a>
             <a className="btn-ghost lg" href="about.html">About us</a>
@@ -40,7 +39,7 @@ function Hero() {
         </div>
 
         <div className="hero-logo-display">
-          <img src="logo-monkey.png" alt="Kinkajoo" className="hero-logo-img" />
+          <img src="homePageLogo.png" alt="Kinkajoo" className="hero-logo-img" />
         </div>
       </div>
     </section>
