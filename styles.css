@@ -287,13 +287,20 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   background: radial-gradient(circle, rgba(31,61,46,0.10) 0%, rgba(200,57,46,0.04) 55%, transparent 75%);
   pointer-events: none;
 }
+.hero-text-img {
+  width: min(420px, 100%);
+  height: auto;
+  mix-blend-mode: multiply;
+  margin: 16px 0 40px;
+  display: block;
+}
+
 .hero-logo-img {
   width: min(500px, 92%);
   height: auto;
   position: relative;
   z-index: 1;
   mix-blend-mode: multiply;
-  clip-path: inset(0 0 58% 0);
   animation: floaty 6s ease-in-out infinite;
 }
 
