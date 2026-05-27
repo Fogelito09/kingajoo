@@ -295,14 +295,16 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   display: block;
 }
 
-.hero-logo-float {
-  animation: floaty 6s ease-in-out infinite;
+@keyframes floatyMargin {
+  0%, 100% { margin-top: 0px; }
+  50%       { margin-top: -14px; }
 }
 .hero-logo-img {
   width: min(500px, 92%);
   height: auto;
   display: block;
   mix-blend-mode: multiply;
+  animation: floatyMargin 6s ease-in-out infinite;
 }
 
 @keyframes floaty {
