@@ -39,7 +39,9 @@ function Hero() {
         </div>
 
         <div className="hero-logo-display">
-          <img src="Kinkajoologo1.png" alt="Kinkajoo" className="hero-logo-img" />
+          <div className="hero-logo-float">
+            <img src="Kinkajoologo1.png" alt="Kinkajoo" className="hero-logo-img" />
+          </div>
         </div>
       </div>
     </section>
