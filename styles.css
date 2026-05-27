@@ -243,26 +243,23 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .hero-copy { position: relative; }
 .eyebrow { margin-bottom: 40px; }
 .hero-brand-title {
-  font-family: var(--display);
-  font-size: clamp(72px, 11vw, 148px);
-  font-weight: 400;
-  line-height: 0.92;
-  letter-spacing: -0.025em;
-  color: var(--ink);
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(64px, 10vw, 132px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: #29B5E8;
+  -webkit-text-fill-color: #29B5E8;
+  background: none;
   margin: 16px 0 12px;
-  background: linear-gradient(to bottom, var(--ink) 10%, color-mix(in oklab, var(--ink) 60%, var(--cream)) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 .hero-brand-sub {
-  font-family: var(--mono);
-  font-size: clamp(13px, 1.2vw, 17px);
+  font-family: var(--sans);
+  font-size: clamp(15px, 1.4vw, 20px);
   font-weight: 400;
-  color: var(--muted);
+  color: #555;
   margin: 0 0 40px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 .hero-ctas {
   display: flex;
@@ -296,6 +293,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   position: relative;
   z-index: 1;
   mix-blend-mode: multiply;
+  clip-path: inset(0 0 58% 0);
   animation: floaty 6s ease-in-out infinite;
 }
 
