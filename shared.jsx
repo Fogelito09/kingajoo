@@ -65,3 +65,5 @@ function Footer() {
     </footer>
   );
 }
+
+Object.assign(window, { LogoMark, Nav, Footer });
