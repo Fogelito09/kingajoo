@@ -373,7 +373,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .hero-carousel-full {
   position: relative;
   width: 100%;
-  min-height: calc(100vh - 88px);
+  height: 68vh;
+  min-height: 360px;
+  max-height: 640px;
   display: flex;
   align-items: stretch;
 }

@@ -137,16 +137,25 @@ function GameCard({ g }) {
 
 function Hero() {
   const [idx, setIdx] = React.useState(0);
+  const touchStartX = React.useRef(null);
 
   const prev = () => setIdx(i => (i - 1 + GAMES.length) % GAMES.length);
   const next = () => setIdx(i => (i + 1) % GAMES.length);
+
+  const onTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
+  const onTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+    touchStartX.current = null;
+  };
 
   const g = GAMES[idx];
   const href = g.website || g.appStore;
 
   return (
     <section className="hero" id="top">
-      <div className="hero-carousel-full" style={{ '--game-color': g.color }}>
+      <div className="hero-carousel-full" style={{ '--game-color': g.color }} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         <a
           key={g.id}
           href={href}
