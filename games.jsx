@@ -108,14 +108,24 @@ function GameCard({ g }) {
         </span>
       </div>
       <div className="game-card-row-badges">
-        {LINK_TYPES.map(({ key, img, alt, wide }) =>
-          g[key] ? (
-            <a key={key} className={`store-badge ${wide ? 'store-badge-wide' : 'store-badge-icon'}`}
-               href={g[key]} target="_blank" rel="noopener noreferrer">
-              <img src={img} alt={alt} className={`store-badge-logo ${wide ? '' : 'store-badge-logo-sm'}`} />
-            </a>
-          ) : null
-        )}
+        <div className="badges-store-row">
+          {LINK_TYPES.filter(l => l.wide).map(({ key, img, alt }) =>
+            g[key] ? (
+              <a key={key} className="store-badge" href={g[key]} target="_blank" rel="noopener noreferrer">
+                <img src={img} alt={alt} className="store-badge-logo" />
+              </a>
+            ) : null
+          )}
+        </div>
+        <div className="badges-social-row">
+          {LINK_TYPES.filter(l => !l.wide).map(({ key, img, alt }) =>
+            g[key] ? (
+              <a key={key} className="store-badge" href={g[key]} target="_blank" rel="noopener noreferrer">
+                <img src={img} alt={alt} className="store-badge-logo-sm" />
+              </a>
+            ) : null
+          )}
+        </div>
       </div>
     </div>
   );

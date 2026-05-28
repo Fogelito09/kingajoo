@@ -731,14 +731,24 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .game-card-row-badges {
   display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+.badges-store-row {
+  display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   gap: 8px;
   align-items: center;
-  max-width: 180px;
+  flex-wrap: wrap;
 }
-.store-badge-wide { flex-shrink: 0; }
-.store-badge-icon { flex-shrink: 0; }
+.badges-social-row {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
 .read-more-btn {
   background: none;
   border: none;
