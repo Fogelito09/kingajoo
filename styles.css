@@ -718,8 +718,10 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .store-badge:hover { transform: scale(1.07); }
 .store-badge-logo {
-  height: 38px;
-  width: auto;
+  height: 40px;
+  width: 130px;
+  object-fit: contain;
+  object-position: center;
   display: block;
   mix-blend-mode: multiply;
 }
@@ -820,12 +822,6 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   color: var(--ink-soft);
   line-height: 1.5;
   margin-top: 6px;
-}
-.game-card-row-badges {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex-shrink: 0;
 }
 
 /* ---------- footer ---------- */
@@ -1016,8 +1012,14 @@ body[data-vibe="dark"] .foot {
   .game-card-row-num { display: none; }
   .game-card-row-badges {
     grid-column: 1 / -1;
-    flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
+    min-width: 0;
+  }
+  .badges-store-row {
+    justify-content: center;
+  }
+  .badges-social-row {
+    justify-content: center;
   }
 }
 
