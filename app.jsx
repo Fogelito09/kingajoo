@@ -11,33 +11,17 @@ function Hero() {
         <div className="hero-copy">
           <div className="eyebrow">
             <span className="eyebrow-dot" />
-            Kinkajoo · Tel-Aviv · since 2012
+            Kinkajoo · Tel-Aviv · Since 2012
           </div>
-          <div className="hero-text-composite">
-            <img src="logo-monkey.png" alt="" className="hero-monkey-above" />
-            <img src="Kinkajootext.png" alt="Kinkajoo Games & Apps" className="hero-text-img" style={{ marginBottom: 32 }} />
+          <img src="mainLast-transparent.png" alt="Kinkajoo Games & Apps" className="hero-main-logo" />
+          <div className="hero-nav-btns">
+            <a href="games.html" className="hero-nav-btn hero-nav-btn-games">Our Games &amp; Apps</a>
+            <div className="hero-nav-btn-row">
+              <a href="about.html"   className="hero-nav-btn hero-nav-btn-about">About Us</a>
+              <a href="contact.html" className="hero-nav-btn hero-nav-btn-contact">Contact Us</a>
+            </div>
           </div>
         </div>
-
-        <div className="hero-icons">
-          <a className="hero-float-icon-link hero-float-icon-1" href="https://apps.apple.com/us/app/rummikub/id1015322991" target="_blank" rel="noopener noreferrer">
-            <img src="https://kinkajoo-apps.com/wp-content/uploads/2024/12/ICON_BLACK_1024x1024.png" alt="Rummikub" className="hero-float-icon" />
-          </a>
-          <a className="hero-float-icon-link hero-float-icon-2" href="https://apps.apple.com/us/app/rummikub/id973113361" target="_blank" rel="noopener noreferrer">
-            <img src="https://kinkajoo-apps.com/wp-content/uploads/2024/12/ICON-1024x1024.png" alt="Rummikub Premium" className="hero-float-icon" />
-          </a>
-          <a className="hero-float-icon-link hero-float-icon-3" href="https://apps.apple.com/us/app/taki/id1263854454" target="_blank" rel="noopener noreferrer">
-            <img src="https://kinkajoo-apps.com/wp-content/uploads/2024/12/icon_rounded-1024x1024.png" alt="TAKI" className="hero-float-icon" />
-          </a>
-          <a className="hero-float-icon-link hero-float-icon-4" href="https://apps.apple.com/us/app/rummikub-jr/id1208457228" target="_blank" rel="noopener noreferrer">
-            <img src="https://kinkajoo-apps.com/wp-content/uploads/2024/12/junior_icon_rounded_1024x1024.png" alt="Rummikub Junior" className="hero-float-icon" />
-          </a>
-          <a className="hero-float-icon-link hero-float-icon-5" href="https://apps.apple.com/us/app/rummikub-score-timer/id1280370021" target="_blank" rel="noopener noreferrer">
-            <img src="https://kinkajoo-apps.com/wp-content/uploads/2025/01/SCORE_TIMER_1024x1024.png" alt="Score Timer" className="hero-float-icon" />
-          </a>
-        </div>
-
-
       </div>
     </section>
   );

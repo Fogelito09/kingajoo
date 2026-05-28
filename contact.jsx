@@ -17,14 +17,11 @@ function Contact() {
   };
 
   return (
-    <section className="about-contact" id="contact">
-      <div className="about-contact-inner">
-        <div className="about-contact-copy">
-          <div className="section-eyebrow" style={{ marginBottom: '20px' }}>
-            <span>Contact</span>
-          </div>
-          <h2 className="section-title">Get in<br /><em>touch</em>.</h2>
-          <p className="about-body" style={{ marginTop: '20px' }}>
+    <>
+      <section className="about-contact" id="contact">
+        <div className="about-contact-inner">
+          <div className="about-contact-copy">
+            <p className="about-body" style={{ marginTop: '0' }}>
             Whether you're looking for answers, would like to report a problem, or just want to let us know how we did — we'll help you as quickly as possible.
           </p>
           <div className="about-contact-links">
@@ -60,6 +57,7 @@ function Contact() {
         </form>
       </div>
     </section>
+    </>
   );
 }
 
@@ -68,7 +66,12 @@ function Contact() {
 function App() {
   return (
     <>
-      <Nav activePage="contact" />
+      <Nav activePage="contact" titleContent={
+        <div className="page-title-row">
+          <img src="greenKinkajoo.png" alt="" className="page-title-icon" />
+          <h1 className="contact-page-title">- Contact us -</h1>
+        </div>
+      } />
       <main>
         <Contact />
       </main>

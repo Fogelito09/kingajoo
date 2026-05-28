@@ -107,11 +107,6 @@ function GameCard({ g }) {
 function Games() {
   return (
     <section className="games" id="games">
-      <div className="section-head">
-        <div className="section-eyebrow"><span>Games</span></div>
-        <h2 className="section-title">Our games</h2>
-      </div>
-
       <div className="games-cards">
         {GAMES.map(g => <GameCard key={g.id} g={g} />)}
       </div>
@@ -124,7 +119,12 @@ function Games() {
 function App() {
   return (
     <>
-      <Nav activePage="games" />
+      <Nav activePage="games" titleContent={
+        <div className="page-title-row">
+          <img src="pinkKinkajoo.png" alt="" className="page-title-icon" />
+          <h2 className="games-page-title">- Our games &amp; apps -</h2>
+        </div>
+      } />
       <main>
         <Games />
       </main>
