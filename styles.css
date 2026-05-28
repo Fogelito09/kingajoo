@@ -187,7 +187,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 /* ---------- nav ---------- */
 .nav-logo-link { display: inline-flex; align-items: center; }
 .nav-logo-main {
-  height: 48px;
+  height: 64px;
   width: auto;
   display: block;
 }
@@ -373,9 +373,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .hero-carousel-full {
   position: relative;
   width: 100%;
-  height: 68vh;
-  min-height: 360px;
-  max-height: 640px;
+  height: 58vh;
+  min-height: 320px;
+  max-height: 560px;
   display: flex;
   align-items: stretch;
 }
