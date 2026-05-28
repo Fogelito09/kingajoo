@@ -1,20 +1,5 @@
 /* Kinkajoo — shared components */
 
-function LogoMark({ light = false }) {
-  const [failed, setFailed] = React.useState(false);
-  if (failed) {
-    return <span className="logo-mark"><span className="logo-dot" /></span>;
-  }
-  return (
-    <img
-      src="logo-monkey.png"
-      alt=""
-      className={`logo-img${light ? ' logo-img-light' : ''}`}
-      onError={() => setFailed(true)}
-    />
-  );
-}
-
 function Nav({ activePage, titleContent }) {
   const [scrolled, setScrolled] = React.useState(false);
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -102,4 +87,4 @@ function Footer() {
   );
 }
 
-Object.assign(window, { LogoMark, Nav, Footer });
+Object.assign(window, { Nav, Footer });

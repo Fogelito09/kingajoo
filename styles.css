@@ -341,21 +341,30 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .nav-mobile-menu {
   display: flex;
   flex-direction: column;
-  padding: 8px var(--pad) 20px;
+  gap: 10px;
+  padding: 16px var(--pad) 20px;
   border-top: 1px solid var(--line);
-  background: color-mix(in oklab, var(--cream) 92%, transparent);
+  background: color-mix(in oklab, var(--cream) 96%, transparent);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 .nav-mobile-menu a {
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  border-radius: 100px;
+  border: 1.5px solid currentColor;
+  font-size: 15px;
+  font-weight: 600;
   font-family: var(--sans);
-  color: var(--ink-soft);
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
+  text-align: center;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-.nav-mobile-menu a:last-child { border-bottom: none; }
-.nav-mobile-menu a:hover, .nav-mobile-menu a.nav-active { color: #000; }
+.nav-mobile-menu .nav-btn-home:hover,    .nav-mobile-menu .nav-btn-home.nav-btn-active    { background: #29B5E8; color: #fff; }
+.nav-mobile-menu .nav-btn-games:hover,   .nav-mobile-menu .nav-btn-games.nav-btn-active   { background: #C31985; color: #fff; }
+.nav-mobile-menu .nav-btn-about:hover,   .nav-mobile-menu .nav-btn-about.nav-btn-active   { background: #ef8226; color: #fff; }
+.nav-mobile-menu .nav-btn-contact:hover, .nav-mobile-menu .nav-btn-contact.nav-btn-active { background: #76c162; color: #fff; }
 
 /* ---------- hero carousel ---------- */
 .hero {
@@ -1322,8 +1331,26 @@ body::after {
   padding-bottom: 10px;
 }
 
-/* ---------- mobile nav ---------- */
-@media (max-width: 680px) {
+/* ---------- mobile nav + footer ---------- */
+@media (max-width: 860px) {
   .nav-hamburger { display: flex; }
   .nav-links { display: none; }
+  .nav-logo-main { height: 36px; }
+  .nav-inner { padding: 14px var(--pad); }
+}
+
+@media (max-width: 600px) {
+  .nav-logo-main { height: 30px; }
+  .nav-inner { padding: 12px var(--pad); }
+  .nav-mobile-menu a { font-size: 15px; padding: 16px 0; }
+
+  .foot-content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 10px;
+    padding: 24px var(--pad);
+  }
+  .foot-content > div { display: none; }
+  .foot-rights { text-align: center; }
+  .foot-logo { height: 40px; }
 }
