@@ -716,17 +716,29 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   border-radius: 0;
   transition: transform 0.18s ease;
 }
-.store-badge:hover {
-  background: none;
-  transform: scale(1.07);
-}
+.store-badge:hover { transform: scale(1.07); }
 .store-badge-logo {
-  height: 40px;
+  height: 38px;
   width: auto;
   display: block;
   mix-blend-mode: multiply;
-  opacity: 0.85;
 }
+.store-badge-logo-sm {
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+.game-card-row-badges {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  max-width: 180px;
+}
+.store-badge-wide { flex-shrink: 0; }
+.store-badge-icon { flex-shrink: 0; }
 .read-more-btn {
   background: none;
   border: none;

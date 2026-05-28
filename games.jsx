@@ -13,8 +13,12 @@ const GAMES = [
     free: true,
     color: '#C8392E',
     icon: 'https://kinkajoo-apps.com/wp-content/uploads/2024/12/ICON_BLACK_1024x1024.png',
-    appStore: 'https://apps.apple.com/us/app/rummikub/id1015322991',
-    googlePlay: 'https://play.google.com/store/apps/details?id=com.rummikubfree'
+    appStore:   'https://apps.apple.com/us/app/rummikub/id1015322991',
+    googlePlay: 'https://play.google.com/store/apps/details?id=com.rummikubfree',
+    facebook:   'https://www.facebook.com/TheOriginalRummikub',
+    instagram:  'https://www.instagram.com/theoriginalrummikub/',
+    youtube:    'https://www.youtube.com/watch?v=yRkf5wVq9Y8',
+    website:    'http://www.rummikub.com'
   },
   {
     id: 'rummikub-premium',
@@ -26,8 +30,11 @@ const GAMES = [
     free: false,
     color: '#1F3D2E',
     icon: 'https://kinkajoo-apps.com/wp-content/uploads/2024/12/ICON-1024x1024.png',
-    appStore: 'https://apps.apple.com/us/app/rummikub/id973113361',
-    googlePlay: 'https://play.google.com/store/apps/details?id=com.kinkajoo.RummikubHD'
+    appStore:   'https://apps.apple.com/us/app/rummikub/id973113361',
+    googlePlay: 'https://play.google.com/store/apps/details?id=com.kinkajoo.RummikubHD',
+    facebook:   'https://www.facebook.com/TheOriginalRummikub',
+    youtube:    'https://www.youtube.com/watch?v=yRkf5wVq9Y8',
+    website:    'http://www.rummikub.com'
   },
   {
     id: 'taki',
@@ -39,8 +46,11 @@ const GAMES = [
     free: true,
     color: '#1E4E8C',
     icon: 'https://kinkajoo-apps.com/wp-content/uploads/2024/12/icon_rounded-1024x1024.png',
-    appStore: 'https://apps.apple.com/us/app/taki/id1263854454',
-    googlePlay: 'https://play.google.com/store/apps/details?id=com.kinkajoo.taki'
+    appStore:   'https://apps.apple.com/us/app/taki/id1263854454',
+    googlePlay: 'https://play.google.com/store/apps/details?id=com.kinkajoo.taki',
+    facebook:   'https://www.facebook.com/groups/2089980354646620/',
+    youtube:    'https://www.youtube.com/watch?v=5-pFhiwwAME',
+    website:    'https://www.shafirgames.com/ourgames/taki'
   },
   {
     id: 'junior',
@@ -52,7 +62,7 @@ const GAMES = [
     free: true,
     color: '#D97A1C',
     icon: 'https://kinkajoo-apps.com/wp-content/uploads/2024/12/junior_icon_rounded_1024x1024.png',
-    appStore: 'https://apps.apple.com/us/app/rummikub-jr/id1208457228',
+    appStore:   'https://apps.apple.com/us/app/rummikub-jr/id1208457228',
     googlePlay: null
   },
   {
@@ -65,9 +75,18 @@ const GAMES = [
     free: true,
     color: '#1A1A1A',
     icon: 'https://kinkajoo-apps.com/wp-content/uploads/2025/01/SCORE_TIMER_1024x1024.png',
-    appStore: 'https://apps.apple.com/us/app/rummikub-score-timer/id1280370021',
+    appStore:   'https://apps.apple.com/us/app/rummikub-score-timer/id1280370021',
     googlePlay: 'https://play.google.com/store/apps/details?id=com.kinkajoo.rummikubscoretimer'
   }
+];
+
+const LINK_TYPES = [
+  { key: 'appStore',   img: 'downloadApple.png',      alt: 'App Store',    wide: true  },
+  { key: 'googlePlay', img: 'downloadgoogleplay.png',  alt: 'Google Play',  wide: true  },
+  { key: 'youtube',    img: 'youtube_logo.png',         alt: 'YouTube',      wide: false },
+  { key: 'instagram',  img: 'instagram_logo.png',       alt: 'Instagram',    wide: false },
+  { key: 'facebook',   img: 'facebook_logo.png',        alt: 'Facebook',     wide: false },
+  { key: 'website',    img: 'linklogo.png',             alt: 'Website',      wide: false },
 ];
 
 /* ---------- game card ---------- */
@@ -89,13 +108,13 @@ function GameCard({ g }) {
         </span>
       </div>
       <div className="game-card-row-badges">
-        <a className="store-badge" href={g.appStore} target="_blank" rel="noopener noreferrer">
-          <img src="appStoreLogo.png" alt="Download on the App Store" className="store-badge-logo" />
-        </a>
-        {g.googlePlay && (
-          <a className="store-badge" href={g.googlePlay} target="_blank" rel="noopener noreferrer">
-            <img src="googlePlayLogo.png" alt="Get it on Google Play" className="store-badge-logo" />
-          </a>
+        {LINK_TYPES.map(({ key, img, alt, wide }) =>
+          g[key] ? (
+            <a key={key} className={`store-badge ${wide ? 'store-badge-wide' : 'store-badge-icon'}`}
+               href={g[key]} target="_blank" rel="noopener noreferrer">
+              <img src={img} alt={alt} className={`store-badge-logo ${wide ? '' : 'store-badge-logo-sm'}`} />
+            </a>
+          ) : null
         )}
       </div>
     </div>
