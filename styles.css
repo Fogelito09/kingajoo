@@ -403,8 +403,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   box-shadow: 0 20px 60px rgba(0,0,0,0.18);
   transition: transform 0.3s ease;
 }
-.carousel-card-full:hover .carousel-icon-full {
-  transform: scale(1.04);
+.carousel-icon-link { display: block; }
+.carousel-icon-link:hover .carousel-icon-full {
+  transform: scale(1.06);
 }
 .carousel-name-full {
   font-family: var(--sans);
@@ -1339,6 +1340,15 @@ body::after {
   .nav-links { display: none; }
   .nav-logo-main { height: 36px; }
   .nav-inner { padding: 14px var(--pad); }
+  .nav {
+    background: color-mix(in oklab, var(--cream) 97%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-carousel-full {
+    height: calc(100svh - 64px);
+    min-height: 280px;
+    max-height: none;
+  }
 }
 
 @media (max-width: 600px) {

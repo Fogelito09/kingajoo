@@ -156,16 +156,12 @@ function Hero() {
   return (
     <section className="hero" id="top">
       <div className="hero-carousel-full" style={{ '--game-color': g.color }} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-        <a
-          key={g.id}
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="carousel-card-full"
-        >
-          <img src={g.icon} alt={g.name} className="carousel-icon-full" />
+        <div key={g.id} className="carousel-card-full">
+          <a href={href} target="_blank" rel="noopener noreferrer" className="carousel-icon-link">
+            <img src={g.icon} alt={g.name} className="carousel-icon-full" />
+          </a>
           <span className="carousel-name-full">{g.name}</span>
-        </a>
+        </div>
         <button className="carousel-arrow carousel-arrow-left" onClick={prev} aria-label="Previous">&#8592;</button>
         <button className="carousel-arrow carousel-arrow-right" onClick={next} aria-label="Next">&#8594;</button>
         <div className="carousel-dots">
