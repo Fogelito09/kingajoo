@@ -13,7 +13,10 @@ function Hero() {
             <span className="eyebrow-dot" />
             Kinkajoo · Tel-Aviv · since 2012
           </div>
-          <img src="Kinkajootext.png" alt="Kinkajoo Games & Apps" className="hero-text-img" style={{ marginBottom: 32 }} />
+          <div className="hero-text-composite">
+            <img src="logo-monkey.png" alt="" className="hero-monkey-above" />
+            <img src="Kinkajootext.png" alt="Kinkajoo Games & Apps" className="hero-text-img" style={{ marginBottom: 32 }} />
+          </div>
         </div>
 
         <div className="hero-icons">
@@ -34,9 +37,7 @@ function Hero() {
           </a>
         </div>
 
-        <div className="hero-logo-display" style={{ marginTop: 0 }}>
-          <img src="logo-monkey.png" alt="Kinkajoo monkey" className="hero-logo-img" style={{ width: 'min(480px, 80%)', margin: '0 auto', display: 'block', background: 'transparent' }} />
-        </div>
+
       </div>
     </section>
   );

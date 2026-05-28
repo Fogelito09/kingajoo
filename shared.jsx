@@ -30,10 +30,6 @@ function Nav({ activePage }) {
   return (
     <header className={`nav ${scrolled ? 'nav-scrolled' : ''}`}>
       <div className="nav-inner">
-        <a className="logo" href="index.html">
-          <LogoMark />
-          <img src="onlyKinkajoo.png" alt="Kinkajoo" className="nav-kinkajoo-text" />
-        </a>
         <nav className="nav-links">
           <a href="index.html" className={activePage === 'home' ? 'nav-active' : ''}>Home</a>
           <a href="games.html" className={activePage === 'games' ? 'nav-active' : ''}>Games</a>

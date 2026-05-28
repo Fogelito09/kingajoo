@@ -213,11 +213,22 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .logo-img-light {
   filter: brightness(0) invert(1);
 }
-.nav-kinkajoo-text {
-  height: 26px;
+.nav-logo-composite {
+  position: relative;
+  display: inline-block;
+  padding-top: 18px;
+}
+.nav-logo-text {
+  height: 28px;
   width: auto;
   display: block;
-  mix-blend-mode: multiply;
+}
+.nav-logo-monkey {
+  position: absolute;
+  height: 22px;
+  width: auto;
+  top: 0;
+  right: 5px;
 }
 
 .nav-links {
@@ -289,9 +300,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr auto 0.9fr;
+  grid-template-columns: 1fr auto;
   gap: 48px;
-  align-items: start;
+  align-items: center;
   min-height: calc(100vh - 64px);
   padding: 20px 0 40px;
 }
@@ -342,6 +353,18 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   border-radius: 50%;
   background: radial-gradient(circle, rgba(31,61,46,0.10) 0%, rgba(200,57,46,0.04) 55%, transparent 75%);
   pointer-events: none;
+}
+.hero-text-composite {
+  position: relative;
+  display: inline-block;
+  padding-top: 82px;
+}
+.hero-monkey-above {
+  position: absolute;
+  height: 90px;
+  width: auto;
+  top: 0;
+  right: 45px;
 }
 .hero-text-img {
   width: min(560px, 100%);
@@ -979,6 +1002,7 @@ body::after {
 /* ---------- contact page ---------- */
 .about-contact-copy .section-title {
   color: #000;
+  font-family: 'Fraunces', serif;
 }
 .about-contact-copy .section-title em {
   color: #000;
