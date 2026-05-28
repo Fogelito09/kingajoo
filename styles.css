@@ -746,8 +746,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .badges-social-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 10px;
   width: 100%;
 }
 .read-more-btn {
