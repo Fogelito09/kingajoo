@@ -9,9 +9,9 @@
   --muted: rgba(31, 61, 46, 0.48);
   --line: rgba(31, 61, 46, 0.12);
 
-  --display: "Instrument Serif", "Times New Roman", serif;
-  --sans: "Avenir Next Condensed", "AvenirNextCondensed-Regular", "Avenir Next", "Avenir", "Geist", sans-serif;
-  --mono: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
+  --display: "Avenir Next Condensed", "AvenirNextCondensed-Regular", "Avenir Next", "Avenir", sans-serif;
+  --sans: "Avenir Next Condensed", "AvenirNextCondensed-Regular", "Avenir Next", "Avenir", sans-serif;
+  --mono: "Avenir Next Condensed", "AvenirNextCondensed-Regular", "Avenir Next", "Avenir", sans-serif;
 
   --max: 1280px;
   --pad: 56px;
@@ -481,7 +481,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .eyebrow { margin-bottom: 40px; }
 .hero-brand-title {
-  font-family: 'Fredoka', sans-serif;
+  font-family: var(--sans);
   font-size: clamp(64px, 10vw, 132px);
   font-weight: 600;
   line-height: 0.95;
@@ -1262,7 +1262,7 @@ body::after {
 /* ---------- contact page ---------- */
 .about-contact-copy .section-title {
   color: #000;
-  font-family: 'Fraunces', serif;
+  font-family: var(--sans);
 }
 .about-contact-copy .section-title em {
   color: #000;

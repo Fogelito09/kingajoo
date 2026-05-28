@@ -288,17 +288,16 @@ function ContactSection() {
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "vibe": "Editorial",
-  "displayFont": "Instrument Serif",
   "palette": ["#F4EFE6", "#1F3D2E", "#C8392E"],
   "showHero": true,
   "showFooter": true
 }/*EDITMODE-END*/;
 
 const VIBE_PRESETS = {
-  'Editorial': { palette: ['#F4EFE6', '#1F3D2E', '#C8392E'], displayFont: 'Instrument Serif' },
-  'Swiss': { palette: ['#FAFAF7', '#0A0A0A', '#0A0A0A'], displayFont: 'Geist' },
-  'Playful': { palette: ['#F8EDD8', '#1E4E8C', '#D97A1C'], displayFont: 'Fraunces' },
-  'Dark': { palette: ['#0F0F0E', '#F4EFE6', '#D97A1C'], displayFont: 'Instrument Serif' }
+  'Editorial': { palette: ['#F4EFE6', '#1F3D2E', '#C8392E'] },
+  'Swiss':     { palette: ['#FAFAF7', '#0A0A0A', '#0A0A0A'] },
+  'Playful':   { palette: ['#F8EDD8', '#1E4E8C', '#D97A1C'] },
+  'Dark':      { palette: ['#0F0F0E', '#F4EFE6', '#D97A1C'] }
 };
 
 function App() {
@@ -309,8 +308,7 @@ function App() {
     r.style.setProperty('--cream', tweaks.palette[0]);
     r.style.setProperty('--ink', tweaks.palette[1]);
     r.style.setProperty('--accent', tweaks.palette[2]);
-    r.style.setProperty('--display', `"${tweaks.displayFont}", "Times New Roman", serif`);
-    document.body.dataset.vibe = tweaks.vibe.toLowerCase();
+document.body.dataset.vibe = tweaks.vibe.toLowerCase();
   }, [tweaks]);
 
   const setVibe = (v) => {
@@ -351,14 +349,7 @@ function App() {
               ['#E8DEC8', '#1E4E8C', '#C8392E']
             ]} />
         </TweakSection>
-        <TweakSection title="Type">
-          <TweakSelect
-            label="Display"
-            value={tweaks.displayFont}
-            onChange={(v) => setTweak('displayFont', v)}
-            options={['Instrument Serif', 'Fraunces', 'DM Serif Display', 'Geist']} />
-        </TweakSection>
-        <TweakSection title="Sections">
+<TweakSection title="Sections">
           <TweakToggle label="Hero" value={tweaks.showHero} onChange={(v) => setTweak('showHero', v)} />
         </TweakSection>
       </TweaksPanel>
