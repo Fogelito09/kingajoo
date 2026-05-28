@@ -732,8 +732,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .game-card-row-badges {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  align-items: flex-start;
+  gap: 10px;
+  align-items: stretch;
+  min-width: 160px;
 }
 .badges-store-row {
   display: flex;
@@ -745,9 +746,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .badges-social-row {
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  width: 100%;
 }
 .read-more-btn {
   background: none;
