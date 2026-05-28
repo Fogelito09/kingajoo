@@ -136,19 +136,18 @@
 }
 .about-contact .section-title em {
   font-style: italic;
-  color: var(--accent);
+  color: #000;
 }
 .about-contact-email {
   display: inline-block;
   font-family: var(--display);
   font-size: clamp(18px, 2vw, 24px);
-  color: var(--ink);
-  border-bottom: 2px solid var(--accent);
+  color: #000;
+  border-bottom: 2px solid #000;
   padding-bottom: 2px;
   margin-top: 8px;
-  transition: color 0.18s;
 }
-.about-contact-email:hover { color: var(--accent); }
+.about-contact-email:hover { color: #000; }
 .about-contact-links { margin-top: 32px; }
 .about-social-row {
   display: flex;

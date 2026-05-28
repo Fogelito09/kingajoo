@@ -5,6 +5,7 @@
   --ink: #1F3D2E;
   --ink-soft: rgba(31, 61, 46, 0.72);
   --accent: #C8392E;
+  --blue: #29B5E8;
   --muted: rgba(31, 61, 46, 0.48);
   --line: rgba(31, 61, 46, 0.12);
 
@@ -115,9 +116,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   color: var(--cream);
 }
 .btn-solid:hover {
-  background: var(--accent);
+  background: #000;
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(200,57,46,0.22);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
 .btn-ghost {
   background: transparent;
@@ -159,6 +160,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   align-items: center;
   justify-content: space-between;
   gap: 32px;
+  position: relative;
 }
 .logo {
   display: inline-flex;
@@ -211,10 +213,19 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .logo-img-light {
   filter: brightness(0) invert(1);
 }
+.nav-kinkajoo-text {
+  height: 26px;
+  width: auto;
+  display: block;
+  mix-blend-mode: multiply;
+}
 
 .nav-links {
   display: flex;
   gap: 28px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .nav-links a {
   font-size: 14px;
@@ -223,7 +234,51 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   padding: 6px 0;
   position: relative;
 }
-.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover { color: #000; }
+
+/* hamburger button — hidden on desktop */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav-hamburger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger--open span:nth-child(2) { opacity: 0; }
+.nav-hamburger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* mobile dropdown menu */
+.nav-mobile-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 8px var(--pad) 20px;
+  border-top: 1px solid var(--line);
+  background: color-mix(in oklab, var(--cream) 92%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.nav-mobile-menu a {
+  font-size: 16px;
+  font-family: var(--sans);
+  color: var(--ink-soft);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.nav-mobile-menu a:last-child { border-bottom: none; }
+.nav-mobile-menu a:hover, .nav-mobile-menu a.nav-active { color: #000; }
 
 /* ---------- hero ---------- */
 .hero {
@@ -236,9 +291,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   display: grid;
   grid-template-columns: 1.2fr auto 0.9fr;
   gap: 48px;
-  align-items: center;
+  align-items: start;
   min-height: calc(100vh - 64px);
-  padding: 40px 0 40px;
+  padding: 20px 0 40px;
 }
 .hero-copy { position: relative; }
 .eyebrow { margin-bottom: 40px; }
@@ -270,10 +325,11 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 /* hero visual — large logo display */
 .hero-logo-display {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   position: relative;
-  padding-top: 8px;
+  padding-top: 76px;
+  align-self: start;
 }
 .hero-logo-display::before {
   content: '';
@@ -288,7 +344,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   pointer-events: none;
 }
 .hero-text-img {
-  width: min(420px, 100%);
+  width: min(560px, 100%);
   height: auto;
   mix-blend-mode: multiply;
   margin: 16px 0 40px;
@@ -303,7 +359,8 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   width: min(500px, 92%);
   height: auto;
   display: block;
-  mix-blend-mode: multiply;
+  background: transparent;
+  mix-blend-mode: normal;
   animation: floatyMargin 6s ease-in-out infinite;
 }
 
@@ -511,15 +568,36 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .store-row { display: flex; gap: 8px; }
 .store-badge {
-  background: var(--ink);
-  color: var(--cream);
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 500;
-  transition: background 0.18s;
+  display: inline-block;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  transition: transform 0.18s ease;
 }
-.store-badge:hover { background: var(--accent); }
+.store-badge:hover {
+  background: none;
+  transform: scale(1.07);
+}
+.store-badge-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  mix-blend-mode: multiply;
+  opacity: 0.85;
+}
+.read-more-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.read-more-btn:hover { opacity: 0.75; }
 
 /* ---------- games page — inline rows ---------- */
 .games-cards {
@@ -530,7 +608,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .game-card-row {
   display: grid;
-  grid-template-columns: 40px 80px 1fr auto;
+  grid-template-columns: 80px 1fr auto;
   gap: 24px;
   align-items: center;
   padding: 28px 0;
@@ -736,6 +814,8 @@ body[data-vibe="dark"] .foot {
   .foot-top { grid-template-columns: 1fr; gap: 48px; }
   .foot-cols { grid-template-columns: repeat(2, 1fr); }
   .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-inner { justify-content: space-between; gap: 0; }
   .section-head { padding: 40px var(--pad) 32px; }
   .display { font-size: clamp(48px, 11vw, 80px); }
   .hero-logo-display { height: 280px; }
@@ -771,7 +851,7 @@ body::after {
 }
 
 /* ---------- nav active underline ---------- */
-.nav-links a.nav-active { color: var(--accent); }
+.nav-links a.nav-active { color: #000; }
 .nav-links a.nav-active::after {
   content: '';
   position: absolute;
@@ -779,7 +859,7 @@ body::after {
   left: 0;
   right: 0;
   height: 1.5px;
-  background: var(--accent);
+  background: #000;
   border-radius: 2px;
 }
 
@@ -894,4 +974,19 @@ body::after {
 @media (max-width: 980px) {
   .hero-logo-display::after { display: none; }
   .hero-icons { display: none; }
+}
+
+/* ---------- contact page ---------- */
+.about-contact-copy .section-title {
+  color: #000;
+}
+.about-contact-copy .section-title em {
+  color: #000;
+}
+.about-contact-email {
+  color: #000;
+  display: block;
+}
+.about-contact-email:hover {
+  color: #000;
 }
