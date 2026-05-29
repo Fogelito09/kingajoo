@@ -1338,7 +1338,8 @@ body::after {
 @media (max-width: 860px) {
   .nav-hamburger { display: flex; }
   .nav-links { display: none; }
-  .nav-logo-main { height: 60px; }
+  .nav-logo-main { height: 72px; }
+  .nav-scrolled .nav-logo-main { height: 84px; }
   .nav-inner { padding: 16px var(--pad); }
   .nav,
   .nav.nav-scrolled {
@@ -1346,16 +1347,16 @@ body::after {
     top: 0;
     left: 0;
     right: 0;
-    background: var(--cream);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    background: transparent;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
     padding-top: env(safe-area-inset-top);
     transition: none;
   }
-  /* push content below the fixed nav (60px logo + 32px padding + safe area) */
-  main { padding-top: calc(92px + env(safe-area-inset-top, 0px)); }
-  html { scroll-padding-top: calc(92px + env(safe-area-inset-top, 0px)); }
+  /* push content below fixed nav; sized for scrolled state (84px logo + 32px padding + safe area) */
+  main { padding-top: calc(116px + env(safe-area-inset-top, 0px)); }
+  html { scroll-padding-top: calc(116px + env(safe-area-inset-top, 0px)); }
   .hero-carousel-full {
     height: 48vh;
     min-height: 260px;
@@ -1364,11 +1365,12 @@ body::after {
 }
 
 @media (max-width: 600px) {
-  .nav-logo-main { height: 48px; }
+  .nav-logo-main { height: 60px; }
+  .nav-scrolled .nav-logo-main { height: 72px; }
   .nav-inner { padding: 12px var(--pad); }
-  /* 48px logo + 24px padding + safe area */
-  main { padding-top: calc(72px + env(safe-area-inset-top, 0px)); }
-  html { scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px)); }
+  /* sized for scrolled state (72px logo + 24px padding + safe area) */
+  main { padding-top: calc(96px + env(safe-area-inset-top, 0px)); }
+  html { scroll-padding-top: calc(96px + env(safe-area-inset-top, 0px)); }
   .nav-mobile-menu a { font-size: 15px; padding: 16px 0; }
 
   .foot-content {
