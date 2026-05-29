@@ -1342,12 +1342,20 @@ body::after {
   .nav-inner { padding: 16px var(--pad); }
   .nav,
   .nav.nav-scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background: var(--cream);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     border-bottom: 1px solid var(--line);
     padding-top: env(safe-area-inset-top);
+    transition: none;
   }
+  /* push content below the fixed nav (60px logo + 32px padding + safe area) */
+  main { padding-top: calc(92px + env(safe-area-inset-top, 0px)); }
+  html { scroll-padding-top: calc(92px + env(safe-area-inset-top, 0px)); }
   .hero-carousel-full {
     height: 48vh;
     min-height: 260px;
@@ -1358,6 +1366,9 @@ body::after {
 @media (max-width: 600px) {
   .nav-logo-main { height: 48px; }
   .nav-inner { padding: 12px var(--pad); }
+  /* 48px logo + 24px padding + safe area */
+  main { padding-top: calc(72px + env(safe-area-inset-top, 0px)); }
+  html { scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px)); }
   .nav-mobile-menu a { font-size: 15px; padding: 16px 0; }
 
   .foot-content {
